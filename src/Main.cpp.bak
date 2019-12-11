@@ -1,0 +1,164 @@
+/*************************************************************************
+  File Name: Main.cpp
+  Created Time: Mon 02 Dec 2019 01:57:27 PM CST
+Author: LiYanYan
+Description: 
+ ************************************************************************/
+
+#include<iostream>
+#include<string>
+#include<vector>
+#include<stdlib.h>
+#include "ServiceAndEndpointRegisterClient.h"
+#include "TraceSegmentServiceClient.h"
+#include "GRPCChannel.h"
+#include "Timer.h"
+#include "GlobalShareValue.h"
+#include "Tools.h"
+#include "GlobalIdGenerator.h"
+#include "ContextManager.h"
+using namespace std;
+int main(int argc,char *argv[]){
+//	//GRPCChannel *grpcChannel = new GRPCChannel("10.9.1.10:11800");
+//	GRPCChannel *grpcChannel = new GRPCChannel("10.9.1.33:11800");
+//	shared_ptr<Channel> channel = grpcChannel->getChannel(); 
+//	ServiceAndEndpointRegisterClient client(channel);
+//
+//	Timer t;
+//
+//	// 设置15秒，第一次注册实例时会出现不返回实例id的情况 
+//	t.StartTimer(3000, std::bind(&ServiceAndEndpointRegisterClient::run,&client));
+//
+//	TraceSegmentServiceClient client1(channel);
+//	Timer t1;
+//	t1.StartTimer(3000, std::bind(&TraceSegmentServiceClient::run,&client1)); 
+//
+//	std::this_thread::sleep_for(std::chrono::seconds(10));
+//
+//	if(GlobalShareValue::getConfig().isConnected()){
+//
+//			if(ContextManager::isActive()){
+//				ContextManager::contextClear();
+//			}
+//
+//			ContextCarrier carrier;
+//			Span &span = ContextManager::createExitSpan("/test/exit",carrier,"10.9.1.33:123456");
+//			span.addTag("k1","v1");
+//			span.addTag("k2","v2");
+//			span.addLog("log1","logV1");
+//			span.addLog("log2","logV2");
+//			span.setError(false);
+//			span.setSpanLayer(SpanLayer::Http);
+//			span.setComponent("OKHttp");
+//			/*cout << "key:" << carrier.getHeadKey() << ",base64:" << carrier.getHeadValue() << endl;
+//			string s = carrier.getHeadValue();
+//			ContextCarrier carrier1;
+//			carrier1.setHeadValue(s);
+//			cout << carrier1.toString() << endl;*/
+//		/*	Span &local =  ContextManager::createLocalSpan("/localTest");
+//			local.finish();
+//			Span &local1 =  ContextManager::createLocalSpan("/localTest1");
+//			local1.finish();
+//			Span &local2 =  ContextManager::createLocalSpan("/localTest2");
+//			local2.finish();
+//			Span &local3 =  ContextManager::createLocalSpan("/localTest3");
+//			local3.finish();
+//			Span &local4 =  ContextManager::createLocalSpan("/localTest4");
+//			local4.finish();
+//			Span &local5 =  ContextManager::createLocalSpan("/localTest5");
+//			local5.finish();
+//			Span &local6 =  ContextManager::createLocalSpan("/localTest6");
+//			local6.finish();
+//			Span &local7 =  ContextManager::createLocalSpan("/localTest7");
+//			local7.finish();
+//			Span &local8 =  ContextManager::createLocalSpan("/localTest8");
+//			local8.finish();
+//			Span &local9 =  ContextManager::createLocalSpan("/localTest9");
+//			local9.finish();
+//			Span &local11 =  ContextManager::createLocalSpan("/localTest11");
+//			local11.finish();
+//			Span &local12 =  ContextManager::createLocalSpan("/localTest12");
+//			local12.finish();
+//			Span &local13 =  ContextManager::createLocalSpan("/localTest13");
+//			local13.finish();
+//			Span &local14 =  ContextManager::createLocalSpan("/localTest14");
+//			local14.finish();
+//			Span &local15 =  ContextManager::createLocalSpan("/localTest15");
+//			local15.finish();
+//			Span &local16 =  ContextManager::createLocalSpan("/localTest16");
+//			local16.finish();*/
+//	        std::this_thread::sleep_for(std::chrono::seconds(2));
+//			span.finish();
+//			ContextSnapshot snapshot = ContextManager::capture();
+//			cout << "traceId1:" << ContextManager::getGlobalTraceId() << endl;
+//			ContextManager::stopSpan();
+//
+//
+//	        std::this_thread::sleep_for(std::chrono::seconds(2));
+//			// 简单的模拟跨线程
+//			ContextManager::contextClear();
+//			//ContextCarrier carrier3;
+//			//Span &span1 = ContextManager::createEntrySpan("/test/entry",carrier3);
+//			//ContextManager::continued(snapshot);
+//			Span &span1=  ContextManager::createLocalSpan("/crossThead");
+//			ContextManager::continued(snapshot);
+//			span1.addTag("e1","v1");
+//			span1.addTag("e2","v2");
+//			span1.addLog("elog1","logV1");
+//			span1.addLog("elog2","logV2");
+//			span1.setError(false);
+//			span1.setSpanLayer(SpanLayer::Http);
+//			span1.setComponent("OKHttp");
+//			span1.finish();
+//			ContextSnapshot snapshot1 = ContextManager::capture();
+//			cout << "traceId2:" << ContextManager::getGlobalTraceId() << endl;
+//			ContextManager::stopSpan();
+//
+//
+//	        std::this_thread::sleep_for(std::chrono::seconds(2));
+//			// 简单的模拟跨线程2
+//			ContextCarrier carrier3;
+//			ContextManager::contextClear();
+//			Span &span2 = ContextManager::createExitSpan("/test/crossThead2","10.9.1.34:123456");
+//			ContextManager::continued(snapshot1);
+//			ContextManager::inject(carrier3);
+//			span2.addTag("e1","v1");
+//			span2.addTag("e2","v2");
+//			span2.addLog("elog1","logV1");
+//			span2.addLog("elog2","logV2");
+//			span2.setError(false);
+//			span2.setSpanLayer(SpanLayer::Http);
+//			span2.setComponent("OKHttp");
+//			span2.finish();
+//			cout << "traceId3:" << ContextManager::getGlobalTraceId() << endl;
+//
+//			ContextManager::stopSpan();
+//
+//	        std::this_thread::sleep_for(std::chrono::seconds(2));
+//			// 简单的模拟跨进程
+//			ContextManager::contextClear();
+//			Span &span3 = ContextManager::createEntrySpan("/test/entry",carrier3);
+//			span3.addTag("e1","v1");
+//			span3.addTag("e2","v2");
+//			span3.addLog("elog1","logV1");
+//			span3.addLog("elog2","logV2");
+//			span3.setError(false);
+//			span3.setSpanLayer(SpanLayer::Http);
+//			span3.setComponent("OKHttp");
+//			span3.finish();
+//			cout << "traceId4:"<< ContextManager::getGlobalTraceId() << endl;
+//			ContextManager::stopSpan();
+//
+//
+//
+//
+//
+//
+//	}
+//	cout << "Main End." << endl;
+//
+    GlobalShareValue &config = GlobalShareValue::getConfig();
+	config.setArgs(argv,argc);
+    
+	return 0;
+}

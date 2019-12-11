@@ -1,0 +1,40 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BIN	Makefile	/^BIN=sky-client$/;"	m
+CLIENT_OBJS	Makefile	/^CLIENT_OBJS=$(patsubst %.cpp,%.o, $(CLIENT_SRCS))$/;"	m
+CLIENT_SRCS	Makefile	/^CLIENT_SRCS=$(wildcard .\/*.cpp)$/;"	m
+CXX	Makefile	/^CXX = g++ -I\/home\/lyy\/grpc\/include$/;"	m
+INSTANCE_REGISTERED_TIME	ReciveRemoteRegisterInfo.h	/^		static long INSTANCE_REGISTERED_TIME;$/;"	m	class:ReciveRemoteRegisterInfo	access:public
+INSTANCE_REGISTERED_TIME	ReciveRemoteRegisterInfo.h	/^long ReciveRemoteRegisterInfo::INSTANCE_REGISTERED_TIME= 0l;$/;"	m	class:ReciveRemoteRegisterInfo
+PROTO_OBJS	Makefile	/^PROTO_OBJS=$(foreach DIR,$(PROTO_SRC_DIR), $(wildcard $(DIR)\/*.o))$/;"	m
+PROTO_SRC_DIR	Makefile	/^PROTO_SRC_DIR=$(shell find ..\/gens\/src -type d)$/;"	m
+ReciveRemoteRegisterInfo	ReciveRemoteRegisterInfo.h	/^class ReciveRemoteRegisterInfo {$/;"	c
+ReciveRemoteRegisterInfo::INSTANCE_REGISTERED_TIME	ReciveRemoteRegisterInfo.h	/^		static long INSTANCE_REGISTERED_TIME;$/;"	m	class:ReciveRemoteRegisterInfo	access:public
+ReciveRemoteRegisterInfo::INSTANCE_REGISTERED_TIME	ReciveRemoteRegisterInfo.h	/^long ReciveRemoteRegisterInfo::INSTANCE_REGISTERED_TIME= 0l;$/;"	m	class:ReciveRemoteRegisterInfo
+ReciveRemoteRegisterInfo::SERVICE_ID	ReciveRemoteRegisterInfo.h	/^		static int SERVICE_ID;$/;"	m	class:ReciveRemoteRegisterInfo	access:public
+ReciveRemoteRegisterInfo::SERVICE_ID	ReciveRemoteRegisterInfo.h	/^int ReciveRemoteRegisterInfo::SERVICE_ID = 0;$/;"	m	class:ReciveRemoteRegisterInfo
+ReciveRemoteRegisterInfo::SERVICE_INSTANCE_ID	ReciveRemoteRegisterInfo.h	/^		static int SERVICE_INSTANCE_ID;$/;"	m	class:ReciveRemoteRegisterInfo	access:public
+ReciveRemoteRegisterInfo::SERVICE_INSTANCE_ID	ReciveRemoteRegisterInfo.h	/^int ReciveRemoteRegisterInfo::SERVICE_INSTANCE_ID= 0;$/;"	m	class:ReciveRemoteRegisterInfo
+SERVICE_ID	ReciveRemoteRegisterInfo.h	/^		static int SERVICE_ID;$/;"	m	class:ReciveRemoteRegisterInfo	access:public
+SERVICE_ID	ReciveRemoteRegisterInfo.h	/^int ReciveRemoteRegisterInfo::SERVICE_ID = 0;$/;"	m	class:ReciveRemoteRegisterInfo
+SERVICE_INSTANCE_ID	ReciveRemoteRegisterInfo.h	/^		static int SERVICE_INSTANCE_ID;$/;"	m	class:ReciveRemoteRegisterInfo	access:public
+SERVICE_INSTANCE_ID	ReciveRemoteRegisterInfo.h	/^int ReciveRemoteRegisterInfo::SERVICE_INSTANCE_ID= 0;$/;"	m	class:ReciveRemoteRegisterInfo
+ServiceAndEndpointRegisterClient	ServiceAndEndpointRegisterClient.cpp	/^  ServiceAndEndpointRegisterClient(std::shared_ptr<Channel> channel)$/;"	f	class:ServiceAndEndpointRegisterClient	access:public	signature:(std::shared_ptr<Channel> channel)
+ServiceAndEndpointRegisterClient	ServiceAndEndpointRegisterClient.cpp	/^class ServiceAndEndpointRegisterClient{$/;"	c	file:
+ServiceAndEndpointRegisterClient::ServiceAndEndpointRegisterClient	ServiceAndEndpointRegisterClient.cpp	/^  ServiceAndEndpointRegisterClient(std::shared_ptr<Channel> channel)$/;"	f	class:ServiceAndEndpointRegisterClient	access:public	signature:(std::shared_ptr<Channel> channel)
+ServiceAndEndpointRegisterClient::doServiceInstanceRegister	ServiceAndEndpointRegisterClient.cpp	/^  ServiceInstanceRegisterMapping doServiceInstanceRegister(ServiceInstances instances) {$/;"	f	class:ServiceAndEndpointRegisterClient	access:public	signature:(ServiceInstances instances)
+ServiceAndEndpointRegisterClient::doServiceRegister	ServiceAndEndpointRegisterClient.cpp	/^  ServiceRegisterMapping doServiceRegister(Services services) {$/;"	f	class:ServiceAndEndpointRegisterClient	access:public	signature:(Services services)
+ServiceAndEndpointRegisterClient::printInstancesReplyInfo	ServiceAndEndpointRegisterClient.cpp	/^  void printInstancesReplyInfo(ServiceInstanceRegisterMapping reply){$/;"	f	class:ServiceAndEndpointRegisterClient	access:public	signature:(ServiceInstanceRegisterMapping reply)
+ServiceAndEndpointRegisterClient::printServicesReplyInfo	ServiceAndEndpointRegisterClient.cpp	/^  void printServicesReplyInfo(ServiceRegisterMapping reply){$/;"	f	class:ServiceAndEndpointRegisterClient	access:public	signature:(ServiceRegisterMapping reply)
+ServiceAndEndpointRegisterClient::stub_	ServiceAndEndpointRegisterClient.cpp	/^  std::unique_ptr<Register::Stub> stub_;$/;"	m	class:ServiceAndEndpointRegisterClient	file:	access:private
+doServiceInstanceRegister	ServiceAndEndpointRegisterClient.cpp	/^  ServiceInstanceRegisterMapping doServiceInstanceRegister(ServiceInstances instances) {$/;"	f	class:ServiceAndEndpointRegisterClient	access:public	signature:(ServiceInstances instances)
+doServiceRegister	ServiceAndEndpointRegisterClient.cpp	/^  ServiceRegisterMapping doServiceRegister(Services services) {$/;"	f	class:ServiceAndEndpointRegisterClient	access:public	signature:(Services services)
+main	ServiceAndEndpointRegisterClient.cpp	/^int main(int argc, char** argv) {$/;"	f	signature:(int argc, char** argv)
+printInstancesReplyInfo	ServiceAndEndpointRegisterClient.cpp	/^  void printInstancesReplyInfo(ServiceInstanceRegisterMapping reply){$/;"	f	class:ServiceAndEndpointRegisterClient	access:public	signature:(ServiceInstanceRegisterMapping reply)
+printServicesReplyInfo	ServiceAndEndpointRegisterClient.cpp	/^  void printServicesReplyInfo(ServiceRegisterMapping reply){$/;"	f	class:ServiceAndEndpointRegisterClient	access:public	signature:(ServiceRegisterMapping reply)
+stub_	ServiceAndEndpointRegisterClient.cpp	/^  std::unique_ptr<Register::Stub> stub_;$/;"	m	class:ServiceAndEndpointRegisterClient	file:	access:private
+ver	Makefile	/^ver=release$/;"	m
