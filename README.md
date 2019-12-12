@@ -16,6 +16,6 @@
 # Demo结果
 <img src="https://github.com/liyanyan-dev/skywalking-grpc-cpp/blob/master/img-storage/trace1.png"/>  
 <img src="https://github.com/liyanyan-dev/skywalking-grpc-cpp/blob/master/img-storage/trace2.png"/>  
-<img src="https://github.com/liyanyan-dev/skywalking-grpc-cpp/blob/master/img-storage/trace3.png"/> 
-<img src="https://github.com/liyanyan-dev/skywalking-grpc-cpp/blob/master/img-storage/trace4.png"/> 
+<img src="https://github.com/liyanyan-dev/skywalking-grpc-cpp/blob/master/img-storage/trace3.png"/>  
+<img src="https://github.com/liyanyan-dev/skywalking-grpc-cpp/blob/master/img-storage/trace4.png"/>  
 
